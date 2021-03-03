@@ -9,7 +9,7 @@ grade: devel
 
 apps:
   dssb-signagev1:
-    command: desktop-launch xwayland-kiosk-launch "$SNAP/dssb-signage/signage" "--no-sandbox"
+    command: desktop-launch xwayland-kiosk-launch "$SNAP/signage" "--no-sandbox"
     plugs:
     - browser-support
     - network
@@ -21,7 +21,7 @@ apps:
   daemon:
     daemon: simple
     restart-condition: always
-    command: desktop-launch xwayland-kiosk-launch "$SNAP/dssb-signage/signage" "--no-sandbox"
+    command: desktop-launch xwayland-kiosk-launch "$SNAP/signage" "--no-sandbox"
     plugs:
     - browser-support
     - network
