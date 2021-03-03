@@ -3,7 +3,7 @@ version: '0.1'
 summary: dssb Signage Client
 description: |
   Electron signage app
-base: core18
+base: core20
 confinement: strict
 grade: devel
 
@@ -36,7 +36,7 @@ environment:
 parts:
   dssb-signage:
     plugin: nodejs
-    nodejs-version: 12.16.0
+    nodejs-version: 12.0.0
     source: https://github.com/Brandious/signage-electron.git
     after: [desktop-gtk3, xwayland-kiosk-helper]
     override-build: |
