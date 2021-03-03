@@ -40,6 +40,7 @@ parts:
     source: https://github.com/Brandious/signage-electron.git
     after: [desktop-gtk3, xwayland-kiosk-helper]
     override-build: |
+        PATH=$PATH:$SNAPCRAFT_PART_SRC/../npm/bin
         case $SNAPCRAFT_ARCH_TRIPLET in
           "i386-linux-gnu") ARCH="ia32";;
           "x86_64-linux-gnu") ARCH="x64";;
@@ -58,8 +59,6 @@ parts:
     - libxss1
     - libxtst6
     build-packages:
-    - nodejs
-    - npm
     - unzip
 
   # Adapted from snapcraft-desktop-helpers https://github.com/ubuntu/snapcraft-desktop-helpers/blob/master/snapcraft.yaml#L183
