@@ -50,6 +50,7 @@ parts:
         esac
         npx cross-env ELECTRON_GET_USE_PROXY=true GLOBAL_AGENT_HTTPS_PROXY=$https_proxy npm install electron electron-packager &&
         ./node_modules/.bin/electron-packager . --overwrite --platform=linux --arch=$ARCH --output=release-build --prune=true
+        ls -al
         cp -v -R ./dssb-signagev1-linux-$ARCH $SNAPCRAFT_PART_INSTALL/signage
     stage-packages:
     - libasound2
