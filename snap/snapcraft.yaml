@@ -8,7 +8,7 @@ confinement: strict
 grade: devel
 
 apps:
-  dssb-signage:
+  dssb-signagev1:
     command: desktop-launch xwayland-kiosk-launch "$SNAP/dssb-signage/signage" "--no-sandbox"
     plugs:
     - browser-support
@@ -34,7 +34,7 @@ environment:
   XWAYLAND_FULLSCREEN_WINDOW_HINT: window_role="browser-window"
 
 parts:
-  dssb-signage:
+  dssb-signagev1:
     plugin: nodejs
     nodejs-version: 12.13.0
     source: https://github.com/Brandious/signage-electron.git
@@ -50,7 +50,7 @@ parts:
         esac
         npx cross-env ELECTRON_GET_USE_PROXY=true GLOBAL_AGENT_HTTPS_PROXY=$https_proxy npm install electron electron-packager &&
         ./node_modules/.bin/electron-packager . --overwrite --platform=linux --arch=$ARCH --output=release-build --prune=true
-        cp -v -R ./dssb-signagev1-linux-$ARCH-$SNAPCRAFT_PART_INSTALL/signage
+        cp -v -R ./dssb-signagev1-linux-$ARCH $SNAPCRAFT_PART_INSTALL/signage
     stage-packages:
     - libasound2
     - libgconf-2-4
