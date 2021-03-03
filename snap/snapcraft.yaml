@@ -36,7 +36,7 @@ environment:
 parts:
   dssb-signage:
     plugin: nodejs
-    nodejs-version: 12.0.0
+    nodejs-version: 12.13.0
     source: https://github.com/Brandious/signage-electron.git
     after: [desktop-gtk3, xwayland-kiosk-helper]
     override-build: |
