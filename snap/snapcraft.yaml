@@ -25,13 +25,7 @@ apps:
     - wayland
     - x11-plug
 
- plugs:
-  browser-sandbox:
-    interface: browser-support
-    allow-sandbox: true
-  x11-plug: # because cannot have identical plug/slot name in same yaml.
-    interface: x11
-
+ 
   daemon:
     daemon: simple
     restart-condition: always
@@ -43,6 +37,14 @@ apps:
     - opengl
     - pulseaudio
     - wayland
+
+plugs:
+  browser-sandbox:
+    interface: browser-support
+    allow-sandbox: true
+  x11-plug: # because cannot have identical plug/slot name in same yaml.
+    interface: x11
+
 
 environment:
   XWAYLAND_FULLSCREEN_WINDOW_HINT: window_role="browser-window"
