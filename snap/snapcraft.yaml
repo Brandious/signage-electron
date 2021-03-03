@@ -12,8 +12,6 @@ apps:
     daemon: simple
     restart-condition: always
     command: desktop-launch xwayland-kiosk-launch "$SNAP/signage/signage" "--no-sandbox"
-    enviroment: 
-        XWAYLAND_FULLSCREEN_WINDOW_HINT: window_role="browser-window"
     slots: [ x11 ]
     plugs:
     - browser-sandbox
