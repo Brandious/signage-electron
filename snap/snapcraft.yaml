@@ -23,19 +23,6 @@ apps:
     - wayland
     - x11-plug
 
- 
-  daemon:
-    daemon: simple
-    restart-condition: always
-    command: desktop-launch xwayland-kiosk-launch "$SNAP/signage/signage" "--no-sandbox"
-    plugs:
-    - browser-support
-    - network
-    - network-bind
-    - opengl
-    - pulseaudio
-    - wayland
-
 plugs:
   browser-sandbox:
     interface: browser-support
