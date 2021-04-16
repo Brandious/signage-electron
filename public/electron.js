@@ -10,7 +10,7 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({ width: 1920, height: 1080, frame: false });
   mainWindow.loadURL(
-     `https://ap-signage.web.app/totem1`
+     `https://ap-signage.web.app/totem3`
   );
   mainWindow.maximize()
   mainWindow.setFullScreen(true)
