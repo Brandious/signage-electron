@@ -6,7 +6,7 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 1920, height: 1080, frame: false, transparent: true});
+  mainWindow = new BrowserWindow({ width: 1920, height: 1080, frame: false, backgroundColor: '#000000'});
   mainWindow.loadURL(
      `https://ap-signage.web.app/totem3`
   );
